@@ -1,8 +1,6 @@
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 
-import java.util.List;
-
-//@Embeddable  // sub schemas (embeddable is embedding table)
 @Entity
 public class Laptop {
 
@@ -11,8 +9,6 @@ public class Laptop {
     private String brand;
     private String model;
     private int ram;
-    @ManyToMany(mappedBy = "laptops",fetch = FetchType.EAGER)
-    private List<Alien> aliens;
 
     public int getLid() {
         return lid;
@@ -48,14 +44,6 @@ public class Laptop {
         return model;
     }
 
-
-    public List<Alien> getAliens() {
-        return aliens;
-    }
-
-    public void setAliens(List<Alien> aliens) {
-        this.aliens = aliens;
-    }
 
     @Override
     public String toString() {
