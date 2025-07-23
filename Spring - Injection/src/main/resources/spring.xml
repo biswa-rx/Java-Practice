@@ -1,0 +1,46 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    setter injection-->
+<!--    <bean id="alien1" class="org.example.Alien" >-->
+<!--        <property name="age" value="21"/>-->
+<!--        <property name="lap" ref="lap1"/>-->
+<!--    </bean>-->
+
+
+
+    <bean id="alien1" class="org.example.Alien" >
+<!--    one setter injection and another constructor injection-->
+<!--        <constructor-arg value="21"/>-->
+<!--        <property name="lap" ref="lap1"/>-->
+
+
+<!--    sequence of constructor argument-->
+<!--        <constructor-arg value="21"/>-->
+<!--        <constructor-arg ref="lap1"/>-->
+
+
+<!--    type of constructor argument-->
+<!--        <constructor-arg type="org.example.Laptop" ref="lap1"/>-->
+<!--        <constructor-arg type="int" value="21"/>-->
+
+
+<!--    by index-->
+<!--        <constructor-arg index="1" ref="lap1"/>-->
+<!--        <constructor-arg index="0" value="21"/>-->
+
+
+<!--    by name-->
+        <constructor-arg name="lap" ref="lap1"/>
+        <constructor-arg name="age" value="21"/>
+    </bean>
+
+
+    <!--    <bean id="alien2" class="org.example.Alien">-->
+<!--    </bean>-->
+
+    <bean id="lap1" class="org.example.Laptop" scope="singleton">
+    </bean>
+</beans>
