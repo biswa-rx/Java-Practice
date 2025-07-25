@@ -27,8 +27,6 @@
 
 
 
-
-
 <!--    Inner bean-->
     <bean id="alien2" class="org.example.Alien" autowire="byType">
 
